@@ -50,6 +50,10 @@ def style_base_layout():
             #MainMenu, footer, header {
                 visibility: hidden;
             }
+
+            .stApp{
+                color:white;
+            }
                 
             .block-container {
                 padding-top:1.5rem !important;    
@@ -61,19 +65,22 @@ def style_base_layout():
                 line-height:1.1 1important;
                 margin-bottom:0rem !important;
                 
+                
             }
                 
 
             h2 {
                 font-family: 'Climate Crisis', sans-serif !important;
-                font-size: rem !important;
+                font-size: 2rem !important;
                 line-height:0.9 !important;
                 margin-bottom:0rem !important;
                 color: black !important;
             }
                 
             h3, h4, p {
-                font-family: 'Outfit', sans-serif;    
+                font-size = 2.3rem;
+                font-family: 'Outfit', sans-serif;
+                
             }
                 
 
