@@ -16,3 +16,6 @@ segno   #QR code
 pillow  #Image preprocessing
 
 streamlit
+
+librosa
+resemblyzer

@@ -27,9 +27,12 @@ def teacher_dashboard():
   st.header(f""" Welcome, {teacher_data['name']} """)
 
 
+
+# TEACHER LOGIN CHECKS
+
 def login_teacher(teacher_username, teacher_pass):
   if not teacher_username or not teacher_pass:
-    return False
+    return False, "Username and password are required"
 
   teacher = teacher_login(teacher_username, teacher_pass)
 
@@ -37,7 +40,8 @@ def login_teacher(teacher_username, teacher_pass):
     st.session_state.user_role = 'teacher'
     st.session_state.teacher_data = teacher
     st.session_state.logged_in = True
-    return True
+    return True, "Login successful"
+  return False, "Invalid username or password"
 
 #TEACHER LOGIN SCREEN
 
@@ -62,11 +66,15 @@ def teacher_screen_login():
 
   with btnc1:
     if st.button("Login", icon=':material/passkey:', shortcut='control+enter', width="stretch"):
-      if login_teacher(teacher_username, teacher_pass):
+      success, message = login_teacher(teacher_username, teacher_pass)
+      if success:
         st.toast("Welcome back!", icon= "👋")
         import time
         time.sleep(1)
         st.rerun()
+      else:
+        st.error(message)
+      
 
   with btnc2:
     if st.button("Register Instead", icon=":material/passkey:",width="stretch",type="primary"):
