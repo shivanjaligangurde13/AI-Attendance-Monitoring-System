@@ -6,6 +6,7 @@ __pycache__/
 
 venv/
 
-.streamlit/
+.streamlit/*
+!.streamlit/config.toml
 
 dist/
